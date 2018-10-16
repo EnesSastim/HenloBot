@@ -42,7 +42,7 @@ RUN_STRINGS = (
     "( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)",
     "This one is just to annoy @anirudhgupta109 ;)",
     "Please. End your existence thanks.",
-    "ＴＨＯＮＫＹ　ＢＯＩ says no!",
+    "me says no!",
     "NoU∞.",
     "Well… "
     "That just happened.",
@@ -70,8 +70,8 @@ RUN_STRINGS = (
     "Not if I ban you first.",
     "Birthn't yourself.",
     "Okay have fun with your exercise sar.",
-    "I am the　ＴＨＯＮＫ！ There is no running from me!",
-    "ＴＨＯＮＫＢｏｔ demands you walk and not run!",
+    "I am the　Henlo！ There is no running from me!",
+    "Henlo demands you walk and not run!",
 )
 
 SLAP_TEMPLATES = (
@@ -253,7 +253,7 @@ def info(bot: Bot, update: Update, args: List[str]):
     text += "\nPermanent user link: {}".format(mention_html(user.id, "link"))
 
     if user.id == OWNER_ID:
-        text += "\n\nDis nibba stronk af!"
+        text += "\n\nOwO Thats my Owner ^^"
     else:
         if user.id in SUDO_USERS:
             text += "\nThis person is one of my sudo users! " \
@@ -417,7 +417,7 @@ def stats(bot: Bot, update: Update):
 def gps(bot: Bot, update: Update, args: List[str]):
     message = update.effective_message
     try:
-        geolocator = Nominatim(user_agent="SkittBot")
+        geolocator = Nominatim(user_agent="HenloBot")
         location = " ".join(args)
         geoloc = geolocator.geocode(location)  
         chat_id = update.effective_chat.id

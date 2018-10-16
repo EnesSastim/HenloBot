@@ -25,22 +25,22 @@ def mute(bot: Bot, update: Update, args: List[str]) -> str:
 
     user_id = extract_user(message, args)
     if not user_id:
-        message.reply_text("You'll need to either give me a username to mute, or reply to someone to be muted.")
+        message.reply_text("GiB username/id or reply")
         return ""
 
     if user_id == bot.id:
-        message.reply_text("I'm not muting myself!")
+        message.reply_text("Muting me? no thx")
         return ""
 
     member = chat.get_member(int(user_id))
 
     if member:
         if is_user_admin(chat, user_id, member=member):
-            message.reply_text("Afraid I can't stop an admin from talking!")
+            message.reply_text("U wanna mute an admeme?")
 
         elif member.can_send_messages is None or member.can_send_messages:
             bot.restrict_chat_member(chat.id, user_id, can_send_messages=False)
-            message.reply_text("Shush!")
+            message.reply_text("Stfu!")
             return "<b>{}:</b>" \
                    "\n#MUTE" \
                    "\n<b>Admin:</b> {}" \
@@ -49,9 +49,9 @@ def mute(bot: Bot, update: Update, args: List[str]) -> str:
                                               mention_html(member.user.id, member.user.first_name))
 
         else:
-            message.reply_text("This user is already muted!")
+            message.reply_text("User is already muted dumbass")
     else:
-        message.reply_text("This user isn't in the chat!")
+        message.reply_text("isnt here")
 
     return ""
 
@@ -115,7 +115,7 @@ def temp_mute(bot: Bot, update: Update, args: List[str]) -> str:
     user_id, reason = extract_user_and_text(message, args)
 
     if not user_id:
-        message.reply_text("You don't seem to be referring to a user.")
+        message.reply_text("Dude is that even a user?")
         return ""
 
     try:
@@ -128,11 +128,11 @@ def temp_mute(bot: Bot, update: Update, args: List[str]) -> str:
             raise
 
     if is_user_admin(chat, user_id, member):
-        message.reply_text("I really wish I could mute admins...")
+        message.reply_text("U wanna mute an admeme?")
         return ""
 
     if user_id == bot.id:
-        message.reply_text("I'm not gonna MUTE myself, are you crazy?")
+        message.reply_text("Muting me? no thx")
         return ""
 
     if not reason:

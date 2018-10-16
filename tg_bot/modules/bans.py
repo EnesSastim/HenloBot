@@ -71,12 +71,12 @@ def ban(bot: Bot, update: Update, args: List[str]) -> str:
             raise
 
     if is_user_ban_protected(chat, user_id, member):
-        message.reply_text("One day I'll find out how to work around the bot API. " 
-                           "Today is not that day.")
+        message.reply_text("OK thats funny, " 
+                           "but stop.")
         return ""
 
     if user_id == bot.id:
-        message.reply_text("You can't ban the ＴＨＯＮＫ！")
+        message.reply_text("LMAO?")
         return ""
 
     log = "<b>{}:</b>" \
@@ -135,12 +135,12 @@ def temp_ban(bot: Bot, update: Update, args: List[str]) -> str:
             raise
 
     if is_user_ban_protected(chat, user_id, member):
-        message.reply_text("One day I'll find out how to work around the bot API. " 
-                           "Today is not that day.")
+        message.reply_text("OK thats funny, " 
+                           "but stop.")
         return ""
 
     if user_id == bot.id:
-        message.reply_text("You can't ban the ＴＨＯＮＫ！")
+        message.reply_text("LMAO?")
         return ""
 
     if not reason:
@@ -217,8 +217,8 @@ def kick(bot: Bot, update: Update, args: List[str]) -> str:
             raise
 
     if is_user_ban_protected(chat, user_id):
-        message.reply_text("One day I'll find out how to work around the bot API. " 
-                           "Today is not that day.")
+        message.reply_text("OK thats funny, " 
+                           "but stop.")
         return ""
 
     if user_id == bot.id:
@@ -288,11 +288,11 @@ def unban(bot: Bot, update: Update, args: List[str]) -> str:
             raise
 
     if user_id == bot.id:
-        message.reply_text("What exactly are you attempting to do?")
+        message.reply_text("Dude im here..")
         return ""
 
     if is_user_in_chat(chat, user_id):
-        message.reply_text("Boi! this user is already in the group!")
+        message.reply_text("He/She is here already ")
         return ""
 
     chat.unban_member(user_id)

@@ -50,11 +50,11 @@ def gban(bot: Bot, update: Update, args: List[str]):
     user_id, reason = extract_user_and_text(message, args)
 
     if not user_id:
-        message.reply_text("You don't seem to be referring to a user.")
+        message.reply_text("Dude is that even a user?")
         return
 
     if int(user_id) in SUDO_USERS:
-        message.reply_text("Calm down Aniboob, stop trying to act tough.")
+        message.reply_text("NoU")
         return
 
     if int(user_id) in SUPPORT_USERS:
@@ -62,7 +62,7 @@ def gban(bot: Bot, update: Update, args: List[str]):
         return
 
     if user_id == bot.id:
-        message.reply_text("Do you want to die?")
+        message.reply_text("Nonono pls sir")
         return
 
     try:
@@ -91,7 +91,7 @@ def gban(bot: Bot, update: Update, args: List[str]):
 
         return
 
-    message.reply_text(" They're dead now! 👉😎👉")
+    message.reply_text("Preparing..")
 
     banner = update.effective_user  # type: Optional[User]
     send_to_list(bot, SUDO_USERS + SUPPORT_USERS,
@@ -132,7 +132,7 @@ def gban(bot: Bot, update: Update, args: List[str]):
     send_to_list(bot, SUDO_USERS + SUPPORT_USERS,
                    "{} has been successfully gbanned!".format(mention_html(user_chat.id, user_chat.first_name)),
                    html=True)  
-    message.reply_text("Person has been \"Dealt with\".")
+    message.reply_text("Your wish is an order for me sir")
 
 
 @run_async
@@ -141,7 +141,7 @@ def ungban(bot: Bot, update: Update, args: List[str]):
 
     user_id = extract_user(message, args)
     if not user_id:
-        message.reply_text("You don't seem to be referring to a user.")
+        message.reply_text("Dude is that even a user?")
         return
 
     user_chat = bot.get_chat(user_id)
