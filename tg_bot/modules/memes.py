@@ -156,7 +156,7 @@ def spongemocktext(bot: Bot, update: Update):
         os.remove(mocked)
     reply_text = spongemock.mock(data)
     randint = random.randint(1, 699)
-    magick = """convert bob.jpg -font Impact -pointsize 50 -size 800x450 -stroke black -strokewidth 3 -fill white -background none -gravity north caption:"{}" -flatten mocked{}.jpg""".format(reply_text, randint)
+    magick = """convert bob.jpg -font Impact -pointsize 50 -size 512x300 -stroke black -strokewidth 1 -fill white -background none -gravity north caption:"{}" -flatten mocked{}.jpg""".format(reply_text, randint)
     os.system(magick)
     with open('mocked{}.jpg'.format(randint), 'rb') as mockedphoto:
         message.reply_to_message.reply_photo(photo=mockedphoto, reply=message.reply_to_message)
